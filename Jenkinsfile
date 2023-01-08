@@ -9,6 +9,7 @@ echo "The Build Number is: ${env.BUILD_NUMBER}"
 def mavenHome = tool name: "maven3.8.5"
 
 try{    
+sendslacknotifications("STARTED")    
 stage('CheckoutCode'){
 git branch: 'development', credentialsId: 'b89b0a18-712f-4925-b13f-dfc9de7d29d6', url: 
 'https://github.com/vasanthdevops-program/maven-web-application.git'
